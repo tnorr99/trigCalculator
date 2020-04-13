@@ -1,0 +1,40 @@
+body{
+	background-color: #343a40;
+}
+label{
+    margin-top:10px;
+}
+.container-fluid{
+	background-color: #fff;
+	min-height: 400px;
+}
+.btn-default{
+    background-color: #CCC;
+    color: black;
+}
+.btn {
+    /*make text wrap nicely in buttons */
+    white-space:normal;
+}
+
+.locked {
+    display: none !important; /*locked content must not be shown to user*/
+}
+
+.unlocked {
+    border-width: initial !important; /*set border-width to whatever the default is. */
+}
+
+
+.validForm{
+    padding: 8%;
+    border: solid;
+    border-color: #343a40 !important;
+    border-style: groove !important;
+}
+.invalidForm{
+    padding: 8%;
+    border: solid;
+    border-color: red !important;
+    border-style: groove !important;
+}

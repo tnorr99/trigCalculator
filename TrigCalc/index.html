@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Trig Calculator </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 4 References -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Link to FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="app.css">
+    <!-- Your custom JavaScript -->
+    <script src="app.js"></script>
+
+</head>
+      <body>
+           <!-- Main Header -->
+  <header class="main-header" >
+
+    <!-- Logo -->
+
+    <!-- Header Navbar -->
+   <!-- Top Navigation Bar -->
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <!-- Logo -->
+          <a class ="navbar-brand" href="index.html">
+              <img alt="Logo" src="images/precalc-logo.png" style="max-width: 25%;">
+              &nbsp;&nbsp;Trig Solver
+          </a>
+    
+        <!-- Toggler Icon for responsiveness -->
+        <button id="toggle-icon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <!--Menu sets on the left -->
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        <!--Menu sets on the right -->
+        <!--Each individual item can be secured by adding the class: secured -->
+     
+            <ul class="navbar-nav ml-auto">
+                <h4 style="color: #8C8B8B;"> &emsp; &emsp;Calculate By:</h4>  
+                    <li class="nav-item secured">
+                        <a class="nav-link" href="#div-triangle"><i class="fa fa-person"></i> Known Lengths </a>
+                    </li>
+                    <li class="nav-item secured">
+                        <a class="nav-link" href="#div-identity"><i class="fa fa-link"></i> Known Identity</a>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <br><br><br><br>
+    <div class="container-fluid">
+
+        <div class="row text-center">
+            <div class="col-md-12">
+                &nbsp; <!-- place holder for additional top row content -->
+            </div>
+        </div>
+    
+    
+        <div class="row">
+        <div class="col-md-2"></div>
+    
+     
+
+                <div class="col-md-8 content-wrapper " id="div-triangle" >
+                
+                    <p4>Enter the lengths of two known sides of a triangle to get the third, and its trig identities</p4>
+                    <div class="row">
+                        <br>
+                    </div>
+                 <div class="row">
+                     <span id="triangleErrorSpan" style="color: red;"></span>
+                     <form id="triangleSpecs" class="validForm">
+                    <input id="opposite" type="number" step="0.01" Placeholder="Opposite"> &nbsp;
+                    <input id="adjacent" type="number" step="0.01" Placeholder="Adjacent">  &nbsp;
+                    <input id="hypotenuse" type="number" step="0.01" Placeholder="Hypotenuse">  
+                        
+                 </div>
+                    <input id="triangleSubmit" calss="btn" type="submit">
+                    <input type="button" class="btnClearTable" value="Clear Table">
+
+                 </form>
+                    <!--Triangle Div end-->
+                </div>
+                <!--row div end-->
+            <div class="col-md-8 content-wrapper locked " id="div-identity" >
+                
+                    <p4>Enter the known identity to get the lengths and trig identities</p4>
+                    <div class="row">
+                        <br>
+                    </div>
+                    <div class="row">
+                        <h5>Known Identity:</h5>
+                       <select id="trigOptions">
+                           <option value="sin">Sin</option>
+                           <option value="cos">Cos</option>
+                           <option value="tan">Tan</option>
+                           <option value="cot">Cot</option>
+                           <option value="csc">Csc</option>
+                           <option value="sec">Sec</option>
+                       </select>                        
+                       &emsp; &emsp;
+                    </div>
+                <div>
+                     <span id="identityErrorSpan" style="color: red;"></span>
+                     <form id="identitySpecs" class="validForm">
+
+                    <div class= "row">
+                        <input type="number" id="identityNum" step=".01" >
+                    </div>
+                     <div class="row">
+                        <h6 style="color:black;">_____________________________</h6>
+                        <br>
+                    </div>
+
+                    <div class="row"> 
+                        <input type="number" id="identityDen" step=".01">
+                    </div>
+                 </div>
+                
+                    
+                    <input id="identitySubmit" type="submit">
+                    <input type="button" class="btnClearTable" value="Clear Table">
+                 </form>
+              
+                    <!--Triangle Div end-->
+            </div>
+               
+                <!--row div end-->
+     </div>
+
+                <div class=row>
+                    <div class="col-md-12 tableDiv hidden" style="display: inline;">
+                        <table id="identityTable" class="table-bordered">
+            
+                                <td>Sin:</td>    <td id="sinCell">&emsp;</td>
+                            </tr>
+                            <tr>
+                                <td>Cos:</td> <td id="cosCell">&emsp;</td>
+                            </tr>
+                            <tr>
+                                <td>Tan:</td> <td id="tanCell">&emsp;</td>
+                            </tr>
+                            <tr>
+                                <td>Cot:</td> <td id="cotCell">&emsp;</td>
+                            </tr>
+                            <tr>
+                                <td>Csc:</td> <td id="cscCell">&emsp;</td>
+                            </tr>
+                            <tr>
+                                <td>Sec:</td> <td id="secCell">&emsp;</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+        
+          
+<!--End of Contatiner-->
+</div>
+
+<div class="container-fluid bg-dark text-white">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <br>
+            <br>
+      <i> A Thomas Norris Program</i>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            &nbsp; <!-- place holder for additional footer content -->
+        </div>
+    </div>
+</div>
+
+      </body>
